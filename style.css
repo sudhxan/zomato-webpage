@@ -5,14 +5,15 @@
 
 body {
   font-family: 'Merriweather', serif;
-  background-color: #f9fafc;
+  background-color: #ebf2ff;
 }
 
 .navbar {
   display: flex; /*phone 375px, ipad: 768px, */
   align-items: center; /* Aligns all the items to center of the navbar */
-  justify-content: space-around; /* Gives space between the items in the navbar*/
+  justify-content: space-between; /* Gives space between the items in the navbar*/
   background-color: #fff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .navbar__brand {
@@ -23,7 +24,7 @@ body {
   width: 100%;
 }
 
-.nav__item {
+.button__primary {
   background-image: linear-gradient(            /*we are basically treating the gradient as image this is how gradient works in css*/
     to right,  /*shifting it to right the colors from left to right*/
     #ff512f 0%,
@@ -35,12 +36,66 @@ body {
     padding: 12px;
     border-radius: 6px; /* to give curvy look to the button*/
     font-weight: 600;
+    margin-right: 5px;
 }
 
-.nav__item:hover {
+.button__primary:hover {
   background-position: right center; /*adding hover effect*/
   border: 2px solid #FF6767;
   cursor: pointer; /*WHEN YOU HOVER OVER THE BUTTON A HAND WILL APPEAR INSTEAD OF POINTER*/
+}
+
+.container {
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto; /* we are saying give auto margin to left and right */
+}
+
+.hero__image__container {
+  width: 100%;
+}
+
+.hero__image {
+  width: 100%; /*The image's width depends on it's parent container*/
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hero__text {
+  font-weight: 770;
+  font-size: 32px;
+  margin: 20px 0; /* 20px top and buttom, 0 left and right */
+  color: #1d3557;
+}
+
+.food__card__description {
+  padding: 15px;
+
+}
+
+.food__card {
+  background-color: #F9F9F9;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+.food__card__image__container {
+  width: 100%;
+}
+
+
+.food__image {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+}
+
+.explore__menu__text {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #1d3557
 }
 
 @media (min-width: 768px) {
@@ -48,14 +103,86 @@ body {
     justify-content: space-between;
     padding: 10px 10px;
   }
+
+  .hero__container {
+    margin-top: 20px;
+    display: flex; /* by using flex child elements of the parent align themselves like a column or row */
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .explore__menu__lists {
+    margin-top: 45px;
+    display: flex;
+    gap: 20px;
+    padding: 36px;
+  }
+
+  .explore__menu__container {
+    position: relative;
+    margin-top: 80px;
+  }
+
+  .explore__menu__gradient__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to right,
+        #ff512f 0%,
+         #dd2476 51%,
+         #ff512f 100%
+        );
+      z-index: -3;
+      transform: skewY(-5deg);
+  }
+
+  #pizza_card {             /*hashtag because id element in html*/
+    margin-top: -20px;      /*20px will push the card down*/
+    margin-bottom: 20px;    /*lift from bottom to up so +20px*/
+  }
 }
 
 @media (min-width: 1024px) {
+
+  .container {
+    max-width: 80%;
+  }
+
   .navbar__brand {
     width: 150px; /*increasing the size of navbar brand*/
   }
-  .nav__item {
+  .button__primary {
     padding: 20px;
     font-size: 20px;
   }
+
+  .hero__description {
+    width: 100%;
+  }
+
+  .hero__text {
+    font-size: 40px;
+  }
+
+  .explore__menu__lists {
+    gap: 25px;
+  }
+
+  .explore__menu__text {
+    font-size: 40px;
+  }
+
+  .explore__menu__container {
+    position: relative;
+    margin-top: 80px;
+  }
+
+  .explore__menu__gradient__bg {
+        margin-bottom: 100px;
+  }
+
+
 }
